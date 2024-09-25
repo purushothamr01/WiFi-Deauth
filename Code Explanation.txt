@@ -1,0 +1,62 @@
+Code Explanation
+-----------------------------------------------------------------------------
+Libraries
+
+#include <ESP8266WiFi.h>
+
+This line includes the ESP8266WiFi library, which provides the necessary functions to connect and manage Wi-Fi connections on the ESP8266 module.
+-----------------------------------------------------------------------------
+Wi-Fi Credentials
+
+const char* ap     = "ssid";   // Your WiFi's access point name
+const char* pass = "password"; // Your WiFi's password
+
+Replace "ssid" with your Wi-Fi network's SSID (name).
+Replace "password" with the password for your Wi-Fi network.
+-----------------------------------------------------------------------------
+Global Variables
+
+int wifiStatus;
+int connectStatus = 0;
+
+wifiStatus: Stores the current status of the Wi-Fi connection.
+connectStatus: Tracks whether the NodeMCU is connected to Wi-Fi.
+------------------------------------------------------------------------------
+Setup Function
+
+void setup() {
+    pinMode(LED_BUILTIN, OUTPUT);
+    pinMode(2, OUTPUT);
+    WiFi.begin(ap, pass);
+}
+
+Initializes the built-in LED and an external LED connected to GPIO pin 2 as output.
+Begins the Wi-Fi connection process using the provided credentials.
+
+---------------------------------------------------------------------------------
+
+Loop Function
+
+void loop() {
+    wifiStatus = WiFi.status();
+    if(connectStatus == 0) {
+        digitalWrite(LED_BUILTIN, 1);
+        digitalWrite(2, 0;
+    }
+    if(wifiStatus == WL_CONNECTED) {
+        digitalWrite(2, 1);
+        digitalWrite(LED_BUILTIN, 0);
+        connectStatus++;
+    } else if(connectStatus != 0) {
+        digitalWrite(LED_BUILTIN, 1);
+        digitalWrite(2, 0);
+    }
+    delay(1000);
+}
+
+Continuously checks the current Wi-Fi status.
+If not connected (connectStatus == 0), the built-in LED is turned on, and the external LED is turned off.
+If connected (wifiStatus == WL_CONNECTED), the external LED lights up, and the built-in LED turns off. The connectStatus variable is incremented to track the connection.
+If the connection status changes, the respective LEDs are updated to reflect the new status.
+The delay(1000) pauses the loop for 1 second before checking the status again.
+--------------------------------------------------------------------------------------------------
