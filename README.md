@@ -1,6 +1,8 @@
 Wi-Fi Deauth Detector using NodeMCU
 
-This project is a simple Wi-Fi deauthentication detector implemented on the NodeMCU ESP8266. It monitors the Wi-Fi connection status and indicates connectivity with LED indicators. This can be used as a basic framework for more advanced Wi-Fi monitoring applications.
+This project is a simple Wi-Fi deauthentication detector implemented on the NodeMCU ESP8266.
+It monitors the Wi-Fi connection status and indicates connectivity with LED indicators. 
+This can be used as a basic framework for more advanced Wi-Fi monitoring applications.
 
 Author
 Created by Purushotham R.
