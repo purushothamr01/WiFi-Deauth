@@ -1,7 +1,7 @@
 //WiFi Deauth Detector NodeMCU .
 //create by Purushotham.R 
 //Follow Me On LinkedIn 
-https://www.linkedin.com/in/purushotham-r-107b46228?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
+//https://www.linkedin.com/in/purushotham-r-107b46228?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
 
 #include <ESP8266WiFi.h>
  
